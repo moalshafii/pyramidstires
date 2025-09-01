@@ -1,0 +1,31 @@
+---
+import { type CollectionEntry, render } from "astro:content";
+import { getCollection } from "astro:content";
+import Layout from "@src/layouts/Markdown.astro";
+import { SITE_PAGES_SLUGS } from "@src/consts";
+
+type PagesType = CollectionEntry<"pages">;
+
+export async function getStaticPaths() {
+  return SITE_PAGES_SLUGS.map((slug) => ({
+    params: {slug},
+  }));
+}
+
+const { slug } = Astro.params;
+const pages: PagesType[] = await getCollection("pages");
+const page = pages.find((p) => p.data.slug === slug);
+
+if (!page) {
+  return { notFound: true };
+}
+
+// Render the Markdown content
+const {title,description} = page.data;
+const { Content } = await render(page);
+---
+
+<Layout {title} {description}>
+    <Content />
+</Layout>
+

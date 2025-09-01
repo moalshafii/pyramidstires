@@ -1,0 +1,58 @@
+---
+import { type CollectionEntry } from "astro:content";
+type Product = CollectionEntry<"products">;
+const {slug, title, description, category, tags, image } = Astro.props as Product["data"];
+---
+<div class="flex w-full max-w-sm justify-between flex-col items-center p-4 gap-3 text-center rounded-2xl bg-base-300 shadow-lg shadow-primary">
+
+  <h3 class="text-lg font-bold">{title}</h3>
+
+  <img
+    class="w-full rounded-3xl bg-base-200 object-cover mask-x-from-95%"
+    src={image}
+    height="200"
+    width="200"
+    alt={title}
+  />
+
+  <p class="w-full flex flex-col text-center items-center gap-2 px-3">
+    
+     {description.length > 100 ? (
+        <a href={`/products/${slug}`} class="line-clamp-2 text-sm">
+           {description}
+        </a>
+    ):(
+        <span class="line-clamp-2 text-sm">{description}</span>
+    )}
+    
+    <ul class="flex flex-wrap text-xs gap-2 justify-center items-center">
+        {tags.length > 3 ? (
+            <>
+                {tags.slice(0, 3).map((tag) => (
+                    <li class="badge">
+                        <h4>{tag}</h4>
+                    </li>
+                ))}
+
+                {tags.slice(3).map((tag) => (
+                    <li class="sr-only">
+                        <h4>{tag}</h4>
+                    </li>
+                ))}
+            </>
+        ) : (
+            tags.map((tag) => (
+                <li class="badge">
+                    <h4>{tag}</h4>
+                </li>
+            ))
+        )}
+    </ul>
+
+    
+  </p>
+
+  <a href={`/products/${slug}`} class="btn w-full btn-primary">
+    View Product
+  </a>
+</div>

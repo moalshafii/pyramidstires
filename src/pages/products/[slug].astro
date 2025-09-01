@@ -1,0 +1,37 @@
+---
+import { type CollectionEntry, render } from "astro:content";
+import { getCollection } from "astro:content";
+import Layout from "@src/layouts/Markdown.astro";
+import { SITE_PRODACTS_SLUGS } from "@src/consts";
+
+type ProductType = CollectionEntry<"products">;
+
+export async function getStaticPaths() {
+  return SITE_PRODACTS_SLUGS.map((slug) => ({
+    params: {slug},
+  }));
+}
+
+const { slug } = Astro.params;
+const products: ProductType[] = await getCollection("products");
+const product = products.find((p) => p.data.slug === slug);
+
+if (!product) {
+  return { notFound: true };
+}
+
+// Render the Markdown content
+const {title,description} = product.data;
+const { Content } = await render(product);
+---
+
+{product ? (
+  <Layout {title} {description}>
+    <Content />
+  </Layout>
+) : (
+  <Layout>
+    <h1>Product not found</h1>
+    <p>The product you are looking for does not exist.</p>
+  </Layout>
+)}

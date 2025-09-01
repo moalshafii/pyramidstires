@@ -1,0 +1,25 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+import Product from "@src/components/cards/Product.astro";
+
+type ProductType = CollectionEntry<"products">;
+const products: ProductType[] = await getCollection("products");
+
+// group by category
+const grouped = products.reduce((acc, product) => {
+  const cat = product.data.category;
+  if (!acc[cat]) acc[cat] = [];
+  acc[cat].push(product);
+  return acc;
+}, {} as Record<string, ProductType[]>);
+---
+{Object.entries(grouped).map(([category, items]) => (
+  <section class="space-y-4 w-full" >
+    <h2 class="text-2xl text-primary font-bold divider lg:divider-start">{category}</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-4 justify-items-center">
+      {items.map((product) => (
+        <Product {...product.data} key={product.id} />
+      ))}
+    </div>
+  </section>
+))}

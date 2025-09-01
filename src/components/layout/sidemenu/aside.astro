@@ -1,0 +1,52 @@
+---
+import Menu from './menu.astro';
+---
+
+<input type="checkbox" name="sidemenucheckbox" id="sidemenucheckbox" hidden>
+<aside id="sidemenu" class="md:w-72" >
+    <Menu />
+</aside>
+<label for="sidemenucheckbox" id="sidemenuoverlay" class="skeleton"></label>
+
+
+<style lang="postcss">
+    #sidemenu {
+        overflow: hidden;
+        position: fixed;
+        z-index: 30;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100vh;
+        background-color: var(--color-base-300);
+        padding-block: calc(var(--spacing) * 4);
+        @media (width >= 64rem) {
+            position: sticky;
+        }
+    }
+
+    #sidemenuoverlay {
+        overflow: hidden;
+        position: absolute;
+        z-index: 20;
+        top: 0;
+        right: 0;
+        width: 0;
+        height: 100vh;
+        opacity: 0.5;
+    }
+
+    #sidemenucheckbox:checked ~ #sidemenu {
+        width: calc(var(--spacing) * 72) ;
+        padding-inline: calc(var(--spacing) * 4);
+        @media (width <= 48rem) {
+            width: calc(var(--spacing) * 80) ;
+        }
+    }
+
+    #sidemenucheckbox:checked ~ #sidemenuoverlay {
+        @media (width <= 64rem) {
+            width: 100vw;
+        }
+    }
+</style>

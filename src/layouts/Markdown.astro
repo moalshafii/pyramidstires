@@ -1,0 +1,35 @@
+---
+import Footer from "@src/components/layout/Footer.astro";
+import Header from "@src/components/layout/Header.astro";
+import Sidemenu from "@src/components/layout/sidemenu/aside.astro";
+
+import "@src/styles/global.css";
+
+interface LayoutProps {
+  title?: string;
+  description?: string;
+  lang?: string;
+}
+
+const { title, description ,lang} = Astro.props as LayoutProps;
+---
+<html lang={lang ?? "en"}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {title && <title>{title}</title>}
+    {description && <meta name="description" content={description} />}
+  </head>
+  <body>
+    <Sidemenu />
+    <div id="container">
+      <Header />
+        <main class="markdown" >
+            <slot />
+        </main>
+      <Footer />
+    </div>
+  </body>
+</html>
+
+  

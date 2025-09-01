@@ -1,0 +1,29 @@
+---
+import { SITE_BASE, SITE_PAGES_SLUGS ,SITE_PRODACTS_SLUGS} from "@src/consts";
+---
+
+<nav class="menu rounded-box w-full bg-base-200">
+    <li>
+        <details open>
+            <summary>Pages</summary>
+            <ul>
+                <li><a href={SITE_BASE}>home</a></li>
+                <li><a href="products/">products</a></li>
+                {SITE_PAGES_SLUGS.length > 0 && SITE_PAGES_SLUGS.map((slug) => (
+                    <li><a href={slug}>{slug.replaceAll("-","")}</a></li>
+                ))}
+            </ul>
+        </details>
+    </li>
+    <li>
+        <details>
+            <summary>products</summary>
+            <ul>
+                <li><a href="products/">all products</a></li>
+                {SITE_PRODACTS_SLUGS.length > 0 && SITE_PRODACTS_SLUGS.map((slug) => (
+                    <li><a href={slug}>{slug.replaceAll("-","")}</a></li>
+                ))}
+            </ul>
+        </details>
+    </li>
+</nav>
