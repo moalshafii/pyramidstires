@@ -4,7 +4,7 @@ title: "Horus"
 description: "Tiny blocks with high density are designed to reduce noise from vibration and help provide a more comfortable and quiet ride experience. Also, a combination of the center rib and kerf helps change the tread rigidity and improve ride comfort."
 category: "Tires"
 tags: ["noise reduction", "ride comfort", "vibration", "center rib", "kerf", "tread rigidity"]
-image: "/HGO4.png"
+image: "/pyramidstires/HGO4.png"
 ---
 
 # Horus

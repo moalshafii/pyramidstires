@@ -21,7 +21,7 @@ import { SITE_BASE, SITE_PAGES_SLUGS ,SITE_PRODACTS_SLUGS} from "@src/consts";
             <ul>
                 <li><a href="products/">all products</a></li>
                 {SITE_PRODACTS_SLUGS.length > 0 && SITE_PRODACTS_SLUGS.map((slug) => (
-                    <li><a href={slug}>{slug.replaceAll("-","")}</a></li>
+                    <li><a href={`products/${slug}`}>{slug.replaceAll("-","")}</a></li>
                 ))}
             </ul>
         </details>

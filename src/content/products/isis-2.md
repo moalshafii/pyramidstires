@@ -4,7 +4,7 @@ title: "Isis"
 description: "On Isis , there are three longitudinal grooves which are designed to ensure excellent driving performance. Design for new generation MPV, Light truck tire including full 31 specifications ranging from 13 to 16 inch. Wider tread design to provide wider contacting surface, optimizing driving stability and improve anti-wear performance."
 category: "Tires"
 tags: ["MPV", "Light truck", "driving performance", "anti-wear", "stability"]
-image: "/tire-300x300.webp"
+image: "/pyramidstires/HGO4.png"
 ---
 
 - <img src="/pyramidstires/HGO4.png" alt="Image 1" width="400" height="400">

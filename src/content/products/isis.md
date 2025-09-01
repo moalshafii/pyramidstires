@@ -4,7 +4,7 @@ title: "Isis"
 description: "If you’re looking for a high-quality yet affordable tire for your motorcycle, you can’t do better than the Isis. With an advanced bias-ply construction and innovative tread pattern, it provides exceptional puncture and wear resistance for long-lasting service as well as reduces road noise for a smooth and comfortable ride."
 category: "Tires"
 tags: ["motorcycle", "tire", "bias-ply", "puncture resistance", "wear resistance", "road noise", "comfortable ride"]
-image: "/tire-300x300.webp"
+image: "/pyramidstires/HGO4.png"
 ---
 
 - <img src="/pyramidstires/HGO4.png" alt="Image 1" width="400" height="400">

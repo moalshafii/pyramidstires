@@ -4,7 +4,7 @@ title: "Hatshepsut"
 description: "Excellent tread performance and long service life are achieved with an advanced compound. Hatshepsut provides superior control for a high performance ride. Its unique features provide superior control on straight drives & during lean cornering. Silica blending was developed using the latest technologies to supply more flexibility at low and high temperature with stable durability. Hatshepsut is designed with special specification to achieve the most degree of weight handling on the tire."
 category: "Tires"
 tags: ["tread performance", "service life", "high performance", "control", "silica blending", "durability", "weight handling"]
-image: "/HGO4.png"
+image: "/pyramidstires/HGO4.png"
 ---
 
 # hatshepsut

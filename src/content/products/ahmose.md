@@ -4,7 +4,7 @@ title: "Ahmose"
 description: "Prefect tread patterns for motorcycles with wheels from 16″. It provides excellent grip and dry handling as well as durability and rider comfort. The rider’s safety will never be compromised, even if the tire is old. Ahmose introduces a cutting edge technological revolution that promotes excellent traction."
 category: "Tires"
 tags: ["motorcycle", "grip", "durability", "safety", "traction"]
-image: "/HGO4.png"
+image: "/pyramidstires/HGO4.png"
 ---
 
 # Ahmose

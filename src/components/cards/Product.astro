@@ -1,7 +1,7 @@
 ---
 import { type CollectionEntry } from "astro:content";
 type Product = CollectionEntry<"products">;
-const {slug, title, description, category, tags, image } = Astro.props as Product["data"];
+const {slug, title, description, tags = [], image } = Astro.props as Product["data"];
 ---
 <div class="flex w-full max-w-sm justify-between flex-col items-center p-4 gap-3 text-center rounded-2xl bg-base-300 shadow-lg shadow-primary">
 
@@ -18,7 +18,7 @@ const {slug, title, description, category, tags, image } = Astro.props as Produc
   <p class="w-full flex flex-col text-center items-center gap-2 px-3">
     
      {description.length > 100 ? (
-        <a href={`/products/${slug}`} class="line-clamp-2 text-sm">
+        <a href={`products/${slug}`} class="line-clamp-2 text-sm">
            {description}
         </a>
     ):(
@@ -52,7 +52,7 @@ const {slug, title, description, category, tags, image } = Astro.props as Produc
     
   </p>
 
-  <a href={`/products/${slug}`} class="btn w-full btn-primary">
+  <a href={slug} class="btn w-full btn-primary">
     View Product
   </a>
 </div>
